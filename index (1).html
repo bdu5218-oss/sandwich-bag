@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>總匯三明治背包｜一個包，拆成三個包</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@500;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F1EA; --ink:#1F2A17; --muted:#4C5B40; --line:#C9D8B4;
+  --toast:#E3B068; --toast-d:#B98338; --leaf:#7DBB4A; --leaf-d:#4E8C2A; --tom:#E5412D; --on-color:#1F2A17;
+  --panel:#F8FBF0;color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.8 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+h1,h2,h3{font-family:"Chiron GoRound TC","Noto Sans TC","PingFang TC",sans-serif;line-height:1.25;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+p{margin:0 0 1em;max-width:34em}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:700}
+header span{color:var(--muted);font-weight:400;font-size:14px}
+.hero{padding:48px 0 72px}
+.stripe{display:flex;height:28px;border-radius:14px;overflow:hidden;border:2px solid var(--ink);margin-top:48px;max-width:520px}
+.stripe i{flex:1}.stripe i:nth-child(1){background:var(--toast)}.stripe i:nth-child(2){background:var(--leaf)}.stripe i:nth-child(3){background:var(--tom)}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:800;letter-spacing:.02em}
+.hero p.lead{font-size:19px;margin-top:20px;color:var(--muted)}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 26px;border-radius:999px;text-decoration:none;font-weight:700;margin-top:8px}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--tom);outline-offset:3px}
+section{padding:64px 0}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:24px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h3{font-size:22px;margin-bottom:10px}
+.layers{border-radius:28px;overflow:hidden;border:2px solid var(--ink)}
+.layer{padding:28px 32px;display:grid;grid-template-columns:200px 1fr;gap:24px;color:var(--on-color)}
+.layer h3{font-size:26px}
+.layer small{display:block;font:500 14px/1.5 "Noto Sans TC",sans-serif;margin-top:4px;opacity:.8}
+.layer p{margin:0}
+.l1{background:var(--toast)}.l2{background:var(--leaf)}.l3{background:var(--tom);color:#fff}
+.l2{border-top:2px dashed rgba(31,42,23,.4);border-bottom:2px dashed rgba(31,42,23,.4)}
+table{border-collapse:collapse;width:100%;font-size:16px}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+dl{margin:0;display:grid;grid-template-columns:140px 1fr;gap:0}
+dt,dd{margin:0;padding:14px 0;border-bottom:1px solid var(--line)}
+dt{font-weight:700}
+.price{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.big{font:800 clamp(56px,9vw,96px)/1 "Chiron GoRound TC",sans-serif;color:var(--tom)}
+.big small{font-size:20px;color:var(--muted);font-weight:500;margin-left:8px}
+.price s{color:var(--muted)}
+.note{font-size:14px;color:var(--muted)}
+.road{list-style:none;padding:0;margin:0;border-left:3px solid var(--ink)}
+.road li{padding:0 0 22px 22px;position:relative}
+.road li::before{content:"";position:absolute;left:-9px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--leaf);border:3px solid var(--ink)}
+.road b{display:block}
+footer{border-top:2px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:14px}
+footer p{max-width:none}
+@media (max-width:760px){
+  .two,.price{grid-template-columns:1fr}
+  .layer{grid-template-columns:1fr;gap:8px}
+  dl{grid-template-columns:100px 1fr}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){</style>
+</head>
+<body>
+<div class="wrap">
+<header><div>總匯三明治背包</div></header>
+
+<div class="hero">
+  <div>
+    <h1>一個包，<br>拆成三個包。</h1>
+    <p class="lead">20L 硬挺後背包，附一個可快拆的生菜側背包和一個番茄小包。東西多就全部揹，只是去買杯咖啡，就拆個小包出門。</p>
+    <a class="btn" href="#price">看預購價格</a>
+  </div>
+  <div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+</div>
+</div>
+
+<section><div class="wrap">
+  <h2>東西多又雜，每天帶的還不一樣</h2>
+  <div class="two">
+    <div>
+      <h3>通勤族與年輕女性</h3>
+      <p>筆電、保溫瓶、折疊傘、化妝包，再加上一堆零碎小物，全部塞在同一個空間裡，要找東西得整個翻。中途離座去開會、補妝或買咖啡，只能拎著整個重包走，或是先把貴重物品一件件拿出來。</p>
+    </div>
+    <div>
+      <h3>大專院校學生</h3>
+      <p>有的日子要帶筆電和工具，有的日子只有課本和筆記，有時候幾乎什麼都不用帶。單一腔體、容量固定的背包，東西多時裝不下，東西少時又軟塌塌的，揹起來還是一個大包。</p>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>三層模組，各有各的用途</h2>
+  <div class="layers">
+    <div class="layer l1">
+      <div><h3>主包</h3><small>最大模組・平貼抗震艙</small></div>
+      <p>可放 15.6 吋筆電、平板、課本、A4 文件夾和較大的物品。內部有襯板，包包可以自己立著，不會塌。</p>
+    </div>
+    <div class="layer l2">
+      <div><h3>生菜包</h3><small>中型模組・獨立側背包</small></div>
+      <p>使用半透明 TPU 加波浪邊條，裡面放了什麼看得到。拆下來可以當日常側背包，輕裝上課時放折疊傘、水壺和小化妝包。</p>
+    </div>
+    <div class="layer l3">
+      <div><h3>番茄包</h3><small>最小模組・精緻隨身小包</small></div>
+      <p>拆下來可以當補妝包、鑰匙卡包或隨身小包。離開座位時只帶它，鑰匙、卡片和補妝用品都放得進去。</p>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>依當天需要，決定帶哪幾層</h2>
+  <div class="tablewrap"><table>
+    <tr><th>情境</th><th>怎麼組合</th><th>可以帶什麼</th></tr>
+    <tr><td>電腦與工具日</td><td>三層全裝</td><td>筆電、工具、課本、水壺和隨身小物</td></tr>
+    <tr><td>課本筆記日</td><td>主包 + 生菜包</td><td>課本、A4 文件夾，小東西放進透明的生菜包</td></tr>
+    <tr><td>輕裝日</td><td>只揹生菜包</td><td>折疊傘、水壺、小化妝包</td></tr>
+    <tr><td>離座一下</td><td>只帶番茄包</td><td>手機、卡片、鑰匙和補妝用品</td></tr>
+  </table></div>
+  <p class="note" style="margin-top:12px">以上組合僅為舉例，可依個人需求自行搭配。</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap two">
+  <div>
+    <h2>規格與材質</h2>
+    <dl>
+      <dt>容量</dt><dd>20L，約高 38.1 × 寬 38.1 × 厚 19.8 cm</dd>
+      <dt>外層布料</dt><dd>100% rPET 回收寶特瓶再生 600D 防潑水尼龍帆布，通過 GRS 認證</dd>
+      <dt>支撐結構</dt><dd>六面夾層內嵌回收 PE 襯板與無毒 EVA 泡棉，直立不塌、具防震效果</dd>
+      <dt>副包材質</dt><dd>無毒半透明 TPU（不含 PVC 與塑化劑），鋼絲包邊撐出立體波浪造型</dd>
+      <dt>連接方式</dt><dd>快拆扣件，副包可直接拆下</dd>
+    </dl>
+  </div>
+  <div>
+    <h2>環保材質</h2>
+    <p>外層布料由回收寶特瓶紡紗製成，依計畫書資料，生產過程比原生尼龍少用 59% 的能源。副包改用 TPU，不使用 PVC，也可以回收再製。</p>
+    <p>未來預計推出舊包回收計畫（Re-bag）：舊包寄回可折抵購物金，回收的布料會做成小模組包的襯裡。</p>
+    <p>造型方面，快拆結構不限於三明治，之後也能做成蛋糕、幾何甜點或素色款式。</p>
+  </div>
+</div></section>
+
+<section id="price" style="padding-top:0"><div class="wrap">
+  <h2>預購價格</h2>
+  <div class="price">
+    <div>
+      <div class="big">NT$ 1,369<small>早鳥價，前 200 名</small></div>
+      <p style="margin-top:16px">全套包含主包、生菜側背包和番茄小包，三個包一組。正式售價 <s>NT$ 1,590</s>。</p>
+      <p class="note">預計透過群眾募資平台和校園團購，先預購再生產。預購頁面的開放時間之後會再公布。</p>
+    </div>
+    <div>
+      <dl style="grid-template-columns:1fr auto">
+        <dt>全套組・早鳥</dt><dd>NT$ 1,369</dd>
+        <dt>全套組・正式</dt><dd>NT$ 1,590</dd>
+      </dl>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>接下來的計畫</h2>
+  <ul class="road">
+    <li><b>0–6 個月</b>完成 rPET 材質打樣，在群眾募資平台上架，目標首批 200 套預購。</li>
+    <li><b>6–18 個月</b>交付預購訂單，並陸續推出蛋糕、幾何甜點與素色等新模組。</li>
+    <li><b>18–36 個月</b>進入實體選品店通路，開始舊包回收折抵計畫。</li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap">
+  <p>總匯三明治背包目前為概念設計階段，實際產品以打樣成品為準。</p>
+  <p>2026 年 JUST-START 創新創業競賽參賽計畫｜景文科技大學研究發展處 產學組暨創新育成中心</p>
+</div></footer>
+
+</body>
+</html>
